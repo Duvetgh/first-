@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/experiment/select/select",
+    "pages/experiment/input/input",
+    "pages/experiment/result/result",
+    "pages/history/list",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "雅欣科研助手",
+    "navigationBarBackgroundColor": "#F5F7FA",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

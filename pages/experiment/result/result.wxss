@@ -1,0 +1,31 @@
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140rpx, 1fr));
+  gap: 16rpx;
+}
+.stat {
+  background: #F9FAFB;
+  border: 1rpx solid #E5E7EB;
+  border-radius: 12rpx;
+  padding: 16rpx;
+}
+.label {
+  color: #6B7280;
+  font-size: 24rpx;
+}
+.value {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.chart-placeholder {
+  background: #E5F0FF;
+  border: 1rpx dashed #3B82F6;
+  padding: 48rpx 24rpx;
+  text-align: center;
+  color: #3B82F6;
+  border-radius: 12rpx;
+}
+.bullet {
+  font-size: 26rpx;
+  margin: 6rpx 0;
+}

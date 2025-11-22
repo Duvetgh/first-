@@ -1,0 +1,5 @@
+<view class="error" wx:if="{{visible}}">
+  <text class="title">{{title || '分析失败'}}</text>
+  <text class="desc">{{message || '请稍后重试或检查网络。'}}</text>
+  <button size="mini" class="retry" bindtap="onRetry">重新尝试</button>
+</view>

@@ -1,0 +1,12 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "yaxin-research-assistant",
+  "appid": "touristappid",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "minified": false,
+    "urlCheck": false
+  },
+  "compileType": "miniprogram"
+}

@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="page-title">历史分析</view>
+  <section-card title="记录列表" subtitle="本地存储的近期结果">
+    <block wx:if="{{filtered.length}}">
+      <block wx:for="{{filtered}}" wx:key="id">
+        <view class="card" bindtap="goDetail" data-id="{{item.id}}">
+          <view class="flex-between">
+            <text class="item-title">{{item.experimentName}}</text>
+            <text class="tag">{{item.engine}}</text>
+          </view>
+          <view class="subtle-text">{{item.experimentType}} · {{item.timeText}}</view>
+          <view class="subtle-text">{{item.summaryShort}}</view>
+        </view>
+      </block>
+    </block>
+    <empty-state wx:else desc="暂无历史记录" />
+  </section-card>
+</view>

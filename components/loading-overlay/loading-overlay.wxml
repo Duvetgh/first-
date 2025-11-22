@@ -1,0 +1,7 @@
+<view class="overlay" wx:if="{{visible}}">
+  <view class="mask"></view>
+  <view class="content">
+    <loading size="20"></loading>
+    <text class="text">{{text || '分析中，请稍候…'}}</text>
+  </view>
+</view>

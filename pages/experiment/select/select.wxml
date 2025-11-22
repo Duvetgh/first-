@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="page-title">选择实验类型</view>
+  <view class="subtle-text">根据常见模板快速开始，也可在下一步调整字段。</view>
+  <section-card wx:for="{{templates}}" wx:key="id" title="{{item.name}}" subtitle="{{item.description}}">
+    <view class="flex-between">
+      <view class="subtle-text">默认图表：{{item.defaultChartType}}</view>
+      <button size="mini" class="primary-btn" data-id="{{item.id}}" bindtap="goInput">使用</button>
+    </view>
+  </section-card>
+</view>

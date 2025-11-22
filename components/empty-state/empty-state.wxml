@@ -1,0 +1,5 @@
+<view class="empty">
+  <text class="title">{{title || '暂无数据'}}</text>
+  <text class="desc">{{desc || '导入数据后即可查看分析结果'}} </text>
+  <button wx:if="{{buttonText}}" size="mini" bindtap="onTap">{{buttonText}}</button>
+</view>

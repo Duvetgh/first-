@@ -1,0 +1,21 @@
+.error {
+  background: #FEE2E2;
+  border: 1rpx solid #FECACA;
+  color: #B91C1C;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin: 16rpx 0;
+}
+.title {
+  font-weight: 600;
+  font-size: 28rpx;
+}
+.desc {
+  font-size: 26rpx;
+  margin: 8rpx 0 12rpx;
+}
+.retry {
+  border: 1rpx solid #EF4444;
+  color: #EF4444;
+  background: #fff;
+}

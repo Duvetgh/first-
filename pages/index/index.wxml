@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="page-title">雅欣科研助手</view>
+  <view class="subtle-text">一键导入、智能分析科研数据。</view>
+
+  <view class="flex-row" style="gap:12rpx; margin:24rpx 0;">
+    <button class="primary-btn" bindtap="goSelect">新建分析</button>
+    <button class="secondary-btn" bindtap="goInput">快速导入</button>
+  </view>
+
+  <section-card title="最近分析" subtitle="最多展示 5 条">
+    <block wx:if="{{recentList.length}}">
+      <block wx:for="{{recentList}}" wx:key="id">
+        <view class="card" bindtap="goDetail" data-id="{{item.id}}">
+          <view class="flex-between">
+            <text class="item-title">{{item.experimentName}}</text>
+            <text class="tag">{{item.engine}}</text>
+          </view>
+          <view class="subtle-text">{{item.experimentType}} · {{item.timeText}}</view>
+          <view class="subtle-text">{{item.summaryShort}}</view>
+        </view>
+      </block>
+    </block>
+    <empty-state wx:else desc="暂无历史分析，立即新建一个吧" buttonText="开始" bind:tap="goSelect" />
+  </section-card>
+</view>
