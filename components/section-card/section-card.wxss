@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.subtitle {
+  color: #6B7280;
+  font-size: 24rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择实验模板",
+  "usingComponents": {
+    "section-card": "/components/section-card/section-card"
+  }
+}

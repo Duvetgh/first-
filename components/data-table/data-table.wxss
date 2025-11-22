@@ -1,0 +1,38 @@
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140rpx, 1fr)) 120rpx;
+  gap: 12rpx;
+  align-items: center;
+  padding: 8rpx 0;
+}
+.table-head {
+  font-weight: 600;
+  color: #6B7280;
+}
+.cell {
+  font-size: 26rpx;
+}
+.cell-input {
+  background: #F9FAFB;
+  border: 1rpx solid #E5E7EB;
+  border-radius: 10rpx;
+  padding: 14rpx;
+  font-size: 26rpx;
+}
+.delete {
+  color: #EF4444;
+  font-size: 26rpx;
+}
+.empty {
+  padding: 24rpx 0;
+}

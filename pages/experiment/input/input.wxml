@@ -1,0 +1,49 @@
+<loading-overlay visible="{{loading}}" text="分析中，稍等片刻…" />
+<view class="container">
+  <view class="page-title">{{currentTemplate.name || '选择实验类型'}}</view>
+  <view class="subtle-text">{{currentTemplate.description || '先选择模板以加载表头'}} </view>
+
+  <section-card title="实验元信息">
+    <view class="form-item">
+      <text>实验名称</text>
+      <input placeholder="必填" value="{{meta.experimentName}}" bindinput="onMetaInput" data-key="experimentName" />
+    </view>
+    <view class="form-item">
+      <text>日期</text>
+      <input placeholder="YYYY-MM-DD" value="{{meta.date}}" bindinput="onMetaInput" data-key="date" />
+    </view>
+    <view class="form-item">
+      <text>操作者</text>
+      <input placeholder="填写操作者" value="{{meta.operator}}" bindinput="onMetaInput" data-key="operator" />
+    </view>
+    <view class="form-item">
+      <text>备注</text>
+      <textarea placeholder="可选" value="{{meta.note}}" bindinput="onMetaInput" data-key="note"></textarea>
+    </view>
+  </section-card>
+
+  <section-card title="数据导入">
+    <data-table columns="{{currentTemplate.fields || []}}" rows="{{rows}}" bind:change="onRowsChange" title="表格输入"></data-table>
+    <view class="subtle-text" style="margin-top:12rpx;">文件导入（TODO）：后续可接入 CSV/Excel 解析或云函数。</view>
+  </section-card>
+
+  <section-card title="分析配置">
+    <view class="form-item">
+      <text>分析引擎</text>
+      <picker mode="selector" value="{{engineIndex}}" range="{{engineOptions}}" bindchange="onEngineChange">
+        <view class="picker">{{engineOptions[engineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item checkbox">
+      <label><checkbox value="dropNull" checked="{{preprocess.dropNull}}" bindchange="toggleDropNull" /> 自动去除空值</label>
+    </view>
+    <view class="form-item checkbox">
+      <label><checkbox value="normalize" checked="{{preprocess.normalize}}" bindchange="toggleNormalize" /> 标准化/归一化</label>
+    </view>
+  </section-card>
+
+  <view class="flex-row" style="gap:12rpx;">
+    <button class="secondary-btn" bindtap="previewData">预览数据</button>
+    <button class="primary-btn" bindtap="analyze">一键分析</button>
+  </view>
+</view>

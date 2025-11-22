@@ -1,0 +1,65 @@
+<loading-overlay visible="{{loading}}" text="加载分析中…" />
+<view class="container">
+  <error-tip visible="{{!!error}}" message="{{error}}" bind:retry="reload" />
+  <view class="page-title">{{meta.experimentName || '分析结果'}}</view>
+  <view class="subtle-text">{{meta.experimentType}} · {{meta.date}} · 引擎：{{engine}}</view>
+
+  <section-card title="基础统计" subtitle="均值 / 标准差 / 范围">
+    <view class="stats-row">
+      <view class="stat">
+        <text class="label">均值</text>
+        <text class="value">{{stats.mean}}</text>
+      </view>
+      <view class="stat">
+        <text class="label">标准差</text>
+        <text class="value">{{stats.std}}</text>
+      </view>
+      <view class="stat">
+        <text class="label">最小值</text>
+        <text class="value">{{stats.min}}</text>
+      </view>
+      <view class="stat">
+        <text class="label">最大值</text>
+        <text class="value">{{stats.max}}</text>
+      </view>
+      <view class="stat">
+        <text class="label">样本数</text>
+        <text class="value">{{stats.count}}</text>
+      </view>
+    </view>
+  </section-card>
+
+  <section-card title="图表预留" subtitle="可接入 ECharts"> 
+    <view class="chart-placeholder">TODO: 接入 ECharts（例如 ec-canvas）渲染返回的 chartData。</view>
+  </section-card>
+
+  <section-card title="异常点" subtitle="IQR 检测">
+    <block wx:if="{{outliers.length}}">
+      <block wx:for="{{outliers}}" wx:key="index">
+        <view class="card">
+          <view class="flex-between">
+            <text>索引 {{item.index}}</text>
+            <text class="tag badge-error">异常</text>
+          </view>
+          <view class="subtle-text">数值：{{item.value}} · 说明：{{item.reason}}</view>
+        </view>
+      </block>
+    </block>
+    <view wx:else class="subtle-text">未检测到明显异常。</view>
+  </section-card>
+
+  <section-card title="模型总结">
+    <view class="subtle-text">{{modelSummary}}</view>
+    <view wx:if="{{suggestions.length}}" style="margin-top:12rpx;">
+      <view class="label">结论与建议</view>
+      <block wx:for="{{suggestions}}" wx:key="index">
+        <view class="bullet">• {{item}}</view>
+      </block>
+    </view>
+  </section-card>
+
+  <view class="flex-row" style="gap:12rpx;">
+    <button class="secondary-btn" bindtap="goBack">重新分析</button>
+    <button class="primary-btn" bindtap="save">保存到历史</button>
+  </view>
+</view>

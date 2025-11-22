@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "导入实验数据",
+  "usingComponents": {
+    "data-table": "/components/data-table/data-table",
+    "section-card": "/components/section-card/section-card",
+    "loading-overlay": "/components/loading-overlay/loading-overlay"
+  }
+}

@@ -1,0 +1,27 @@
+<view class="card">
+  <view class="table-header">
+    <text class="title">{{title}}</text>
+    <button size="mini" bindtap="onAddRow">添加行</button>
+  </view>
+  <view class="table" wx:if="{{rows.length}}">
+    <view class="table-row table-head">
+      <block wx:for="{{columns}}" wx:key="key">
+        <text class="cell">{{item.label}}</text>
+      </block>
+      <text class="cell action">操作</text>
+    </view>
+    <block wx:for="{{rows}}" wx:key="index">
+      <view class="table-row">
+        <block wx:for="{{columns}}" wx:key="key">
+          <input class="cell-input" placeholder="{{item.label}}" data-row="{{index}}" data-key="{{item.key}}" value="{{item.type === 'number' ? (row[item.key] || '') : (row[item.key] || '')}}" bindinput="onInput" />
+        </block>
+        <view class="cell action">
+          <text class="delete" bindtap="onDelete" data-index="{{index}}">删除</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="empty" wx:else>
+    <text class="subtle-text">暂无数据，点击“添加行”开始输入或粘贴。</text>
+  </view>
+</view>

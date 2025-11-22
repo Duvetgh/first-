@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="page-title">偏好设置</view>
+  <section-card title="分析引擎">
+    <picker mode="selector" value="{{engineIndex}}" range="{{engineOptions}}" bindchange="onEngineChange">
+      <view class="picker">默认引擎：{{engineOptions[engineIndex]}}</view>
+    </picker>
+    <view class="subtle-text">优先使用此引擎，输入页可覆盖。</view>
+  </section-card>
+
+  <section-card title="密钥配置" subtitle="仅示例占位，勿在前端存储敏感信息">
+    <view class="form-item">
+      <text>DeepSeek API Key (占位)</text>
+      <input placeholder="请在后端安全存储" disabled />
+    </view>
+    <view class="form-item">
+      <text>Kimi API Key (占位)</text>
+      <input placeholder="请在后端安全存储" disabled />
+    </view>
+  </section-card>
+
+  <section-card title="主题" subtitle="默认浅色，深色可后续扩展">
+    <view class="subtle-text">当前仅提供浅色主题，深色模式 TODO。</view>
+  </section-card>
+
+  <section-card title="数据隐私">
+    <view class="subtle-text">数据仅用于本地或内部分析，不会上传外部。请勿粘贴敏感数据。</view>
+  </section-card>
+</view>
